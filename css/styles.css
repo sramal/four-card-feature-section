@@ -1,6 +1,7 @@
 /* Google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;@200;400;600&display=swap");
 
+
 /* Variables */
 :root {
   --fontFamily: "Poppins", sans-serif;
@@ -16,12 +17,14 @@
   --Blue: hsl(212, 86%, 64%);
 }
 
+
 /* Reset margin and padding for the page */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 .main {
   background: var(--verLightGray);
@@ -33,6 +36,7 @@
   align-items: center;
 }
 
+
 header {
   display: flex;
   flex-direction: column;
@@ -43,12 +47,14 @@ header {
 
   margin-bottom: 50px;
   text-align: center;
-  width: 60%;
+  width: 50%;
 }
+
 
 header .title-thin {
   font-weight: 100;
 }
+
 
 header .title-bold {
   font-weight: 600;
@@ -56,6 +62,7 @@ header .title-bold {
 
   margin-bottom: 30px;
 }
+
 
 .cards {
   display: grid;
@@ -66,6 +73,7 @@ header .title-bold {
 
   max-width: 90%;
 }
+
 
 .card {
   display: flex;
@@ -79,18 +87,22 @@ header .title-bold {
   border-radius: 10px;
 }
 
+
 .card-title {
   color: var(--veryDarkBlue);
 }
+
 
 .card p {
   color: var(--grayishBlue);
 }
 
+
 .card img {
   align-self: flex-end;
   margin-top: 30px;
 }
+
 
 /* Card layout */
 .card-1 {
@@ -100,12 +112,14 @@ header .title-bold {
   border-top: 5px solid var(--Cyan);
 }
 
+
 .card-2 {
   grid-column: 2 / span 1;
   grid-row: 1 / span 2;
 
   border-top: 5px solid var(--Red);
 }
+
 
 .card-3 {
   grid-column: 2 / span 1;
@@ -114,6 +128,7 @@ header .title-bold {
   border-top: 5px solid var(--Orange);
 }
 
+
 .card-4 {
   grid-column: 3 / span 1;
   grid-row: 2 / span 2;
@@ -121,6 +136,18 @@ header .title-bold {
   border-top: 5px solid var(--Blue);
 }
 
+
+/* Viewing on screens larger than 1200, then content is fixed size. */
+@media (min-width: 1200px) {
+    .main {
+        max-width: 1200px;
+        margin: 40px auto;
+    }
+}
+
+
+/* Below 600px, then content is moved to column format. */
+/* Below changes needed for mobile viewing. */
 @media (max-width: 600px) {
   .main {
     justify-content: flex-start;
@@ -128,7 +155,7 @@ header .title-bold {
 
   .cards {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
     justify-content: center;
     align-items: center;
     flex-flow: column;
